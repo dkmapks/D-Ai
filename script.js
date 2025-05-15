@@ -1,6 +1,6 @@
 const responses = {
   "elo": ["Siemano!", "siemano.m4a"],
-  "siema": ["No siema, wariacie", "siema.mp3"],
+  "siema": ["No siema, wariacie", "siema.m4a"],
   "co tam": ["Lecim z tematem!", "cotam.mp3"],
   "co robisz": ["A tak się obijam", "corobisz.mp3"],
   "jesteś tam": ["No jestem, gdzie mam być?", "jestestam.mp3"],
