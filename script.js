@@ -1,6 +1,6 @@
 const responses = {
-  "elo": ["Siemano!", "siemano.m4a"],
-  "siema": ["No siema, wariacie", "siema.m4a"],
+  "elo": ["Siemano!", "elo.mp3"],
+  "siema": ["No siema, wariacie", "siema.mp3"],
   "co tam": ["Lecim z tematem!", "cotam.mp3"],
   "co robisz": ["A tak się obijam", "corobisz.mp3"],
   "jesteś tam": ["No jestem, gdzie mam być?", "jestestam.mp3"],
@@ -19,8 +19,10 @@ const responses = {
   "co jest": ["Co ma być, klasyk!", "cojest.mp3"],
   "lol": ["LOL, no nie wierzę", "lol.mp3"],
   "nara": ["Narka, do następnego", "nara.mp3"]
-  // Dodaj więcej tu...
+  // Dodaj więcej...
 };
+
+let audio = new Audio();
 
 function respond() {
   const input = document.getElementById("userInput").value.toLowerCase().trim();
@@ -30,9 +32,9 @@ function respond() {
     const [text, audioFile] = responses[input];
     responseBox.innerText = text;
 
-    const audio = new Audio(`audio/${audioFile}`);
-    audio.play().catch(() => {
-      console.log("Autoplay zablokowany – kliknij ekran.");
+    audio.src = `audio/${audioFile}`;
+    audio.play().catch(err => {
+      console.warn("Dźwięk zablokowany lub błąd:", err);
     });
   } else {
     responseBox.innerText = "Nie kumam ziomek...";
